@@ -22,13 +22,19 @@
             display: block;
             text-align: center;
         }
+        .words {
+            margin-top: 15px;
+            font-size: 1.1rem;
+            color: #333;
+        }
     </style>
 </head>
 <body>
     <div class="card text-center">
         <h2 class="mb-4">Predicted House Price</h2>
         <h1 class="display-4">₹ {{ prediction_text }}</h1>
+        <div class="words"><b>In words:</b> {{ prediction_words }}</div>
         <a class="back-link" href="/">← Try Another Prediction</a>
     </div>
-</body>
+    </body>
 </html>
