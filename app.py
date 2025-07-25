@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import pickle
 import numpy as np
+from num2words import num2words  # Added for converting numbers to words
 
 app = Flask(__name__)
 
@@ -26,7 +27,12 @@ def predict():
         prediction = model.predict(final_features)
         output = round(prediction[0], 2)
 
-        return render_template('result.html', prediction_text=output)
+        # Format price with commas
+        formatted_price = "{:,.2f}".format(output)
+        # Convert price to words in Indian format (no currency)
+        price_in_words = num2words(output, lang='en_IN')
+
+        return render_template('result.html', prediction_text=formatted_price, prediction_words=price_in_words)
 
     except Exception as e:
         return f"❌ Error: {e}"
