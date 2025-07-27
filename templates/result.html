@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predicted Price</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f5f6fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        .back-link {
+            margin-top: 20px;
+            display: block;
+            text-align: center;
+        }
+        .words {
+            margin-top: 15px;
+            font-size: 1.1rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="card text-center">
+        <h2 class="mb-4">Predicted House Price</h2>
+        <h1 class="display-4">₹ {{ prediction_text }}</h1>
+        <div class="words"><b>In words:</b> {{ prediction_words }}</div>
+        <a class="back-link" href="/">← Try Another Prediction</a>
+    </div>
+    </body>
+</html>

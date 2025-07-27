@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Predictor</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 40px;
+            background: #f0f0f0;
+        }
+        .form-box {
+            background: white;
+            padding: 30px;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.1);
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 12px;
+            margin-bottom: 20px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-box">
+        <h2>Predict House Price</h2>
+        <form method="POST" action="/predict">
+            <label>Area (sq ft)</label>
+            <input type="number" name="Area" required>
+
+            <label>Number of Bedrooms</label>
+            <input type="number" name="No_of_Bedrooms" required>
+
+            <label>Select City</label>
+            <select name="City" required>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Hyderabad">Hyderabad</option>
+            </select>
+
+            <button type="submit">Predict Price</button>
+        </form>
+    </div>
+</body>
+</html>
